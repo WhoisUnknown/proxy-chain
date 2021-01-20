@@ -334,6 +334,10 @@ export class Server extends EventEmitter {
                     this.log(handlerOpts.id, `Using upstream proxy ${redactParsedUrl(handlerOpts.upstreamProxyUrlParsed)}`);
                 }
 
+                if (funcResult && funcResult.localAddress) {
+                    handlerOpts.localAddress = funcResult.localAddress;
+                }
+
                 return handlerOpts;
             })
             .finally(() => {
