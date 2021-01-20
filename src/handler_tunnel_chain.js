@@ -24,6 +24,7 @@ export default class HandlerTunnelChain extends HandlerBase {
             hostname: this.upstreamProxyUrlParsed.hostname,
             port: this.upstreamProxyUrlParsed.port,
             path: targetHost,
+            localAddress: this.localAddress || undefined,
             headers: {
                 Host: targetHost,
             },
